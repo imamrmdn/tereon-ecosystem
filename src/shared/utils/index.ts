@@ -97,6 +97,15 @@ const limitText = `You have reached your usage limit, try again in 1 x 24 hours`
 const catchErrorText = `Oopss something wrong, please upload another image selfie!`;
 const catchBalanceText = `Insufficient balance/credits, please contact the creator!`;
 
+const welcomeLaunch = `
+*Tereon Ecosystem ⚡️*
+
+*Redefining Online Privacy
+with AI-Powered Solutions*
+
+Tereon Empowering Your Digital Privacy with AI-Driven Tools for Security, Efficiency, and Decentralized Freedom.
+`;
+
 export function commingSoon(fitur: string) {
   return `*This feature ${fitur} will soon be updated in the near future. Please wait as it is still undergoing improvements by the developer.*`;
 }
@@ -133,4 +142,5 @@ export const textInfo = {
   commandColorize,
   errorCondition,
   commandMeme,
+  welcomeLaunch,
 };

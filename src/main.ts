@@ -256,27 +256,29 @@ async function main() {
     //
     if (messageText === '/start') {
       // send a message to the chat acknowledging receipt of their message
-      const imagePath =
-        'https://res.cloudinary.com/drmwcjsgc/image/upload/v1709733709/msminutes.jpg';
+      const WEB_APP_URL = 'https://tereon-app-ecosystem.vercel.app/';
 
-      const tereonLogo =
-        'https://res.cloudinary.com/drmwcjsgc/image/upload/v1733506307/x4hseofasepgujuuomqh.jpg';
-
-      bot.sendPhoto(chatId, imagePath, {
+      bot.sendMessage(chatId, textInfo.welcomeLaunch, {
         parse_mode: 'Markdown',
-        caption: textInfo.welcome,
-        reply_markup: JSON.stringify({
-          inline_keyboard: keyboardMarkup.start,
-        }),
+        // reply_markup: JSON.stringify({
+        //   inline_keyboard: keyboardMarkup.start,
+        // }),
+        reply_markup: {
+          inline_keyboard: [
+            [{ text: 'Launch', web_app: { url: WEB_APP_URL } }],
+          ],
+        },
       });
-    } else if (matchMeme) {
-      await processTextToMeme(chatId, matchMeme, msg);
     } else {
       bot.sendMessage(
         chatId,
         'There are no commands that you execute or invalid command',
       );
     }
+
+    // else if (matchMeme) {
+    //   await processTextToMeme(chatId, matchMeme, msg);
+    // }
 
     // else if (
     //   ((msg.photo || msg.document) &&
