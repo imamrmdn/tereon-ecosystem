@@ -256,7 +256,7 @@ async function main() {
     //
     if (messageText === '/start') {
       // send a message to the chat acknowledging receipt of their message
-      const WEB_APP_URL = 'https://tereon-app-ecosystem.vercel.app/';
+      const WEB_APP_URL = 'https://dapp-tereon-new.vercel.app/';
 
       bot.sendMessage(chatId, textInfo.welcomeLaunch, {
         parse_mode: 'Markdown',
@@ -264,9 +264,7 @@ async function main() {
         //   inline_keyboard: keyboardMarkup.start,
         // }),
         reply_markup: {
-          inline_keyboard: [
-            [{ text: 'Launch', web_app: { url: WEB_APP_URL } }],
-          ],
+          inline_keyboard: [[{ text: 'Launch', url: WEB_APP_URL }]],
         },
       });
     } else {
